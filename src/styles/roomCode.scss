@@ -1,0 +1,29 @@
+@use 'center';
+@use 'vars';
+@use 'common';
+
+#roomcode-component{
+    @include center.centerIt($flexDirection : row);
+    height: 100vh;
+}
+
+#roomcode {
+    background-color: vars.$secondaryColor;
+    padding : 3% 5%;
+    form{
+        display: grid;
+        grid-template-columns: 1fr 1fr 0.75fr 1fr;
+        button {
+            @extend %greenButton;
+        }
+    }
+    label {
+        color: vars.$fontColor;
+        font-size : 25px;
+        grid-column: span 4;
+        margin-bottom: 15px;
+    }
+    input {
+        grid-column: 2;
+    }
+}

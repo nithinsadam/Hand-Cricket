@@ -1,0 +1,65 @@
+@use 'vars';
+@use 'common';
+
+#game-component {
+
+    width : 100vw;
+    height : 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows : 0.75fr 2fr 1fr;
+    gap : 10px;
+
+    h1,h2,h3 {
+        margin : 0px;
+    }
+
+    #score-board,.panel,#sign-pad,.team {
+        background-color: vars.$secondaryColor;
+    }
+
+    #score-board{
+        display: grid;
+        grid-column: 2/4;
+        justify-self: center;
+        grid-template-rows: 1fr 2fr;
+        grid-template-columns: 1fr 1fr;
+        width: 50%;
+        h2{
+            grid-column: span 2;
+        }
+    }
+
+    .panel{
+        // background-color: red;
+        grid-row : 2/3;
+        font-size: 50px;
+    }
+
+    #sign-pad {
+        // background-color: red;
+        align-self: center;
+        height: 50%;
+        grid-row : 3/4;
+        grid-column: 2/4;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .sign{
+        width : 10%;
+    }
+
+    #team-A {
+        grid-column: 1/2;
+    }
+
+    #team-B{
+        grid-column: 4/5;
+    }
+
+    .team {
+        // background-color: red;
+        grid-row: 2/3;
+    }
+}

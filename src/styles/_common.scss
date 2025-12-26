@@ -1,0 +1,67 @@
+@use 'vars';
+@use 'center';
+// body color always primary color
+
+body {
+    background-color: vars.$primaryColor;
+}
+    
+//body always takes full height
+
+html {
+    height: 100%;
+}
+        
+body {
+    height: 100%;
+    margin: 0px;
+}
+
+%defaultButton{
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+%greenButton {
+    @extend %defaultButton;
+    background-color: vars.$primaryColor;
+    color : vars.$fontColor;
+    padding: 5%;
+    transition: background-color 0.1s ease-in-out;
+    &:hover {
+        background-color: vars.$thirdColor;
+    }
+}
+
+%basicForm {
+    @include center.centerIt($flexDirection : column);
+
+    label {
+        align-self: flex-start;
+        font-size: vars.$medium;
+    }
+
+    input {
+        outline : none;
+        width : 100%;
+        font-size: vars.$medium + 7px;
+        margin-bottom : 15px;
+        background-color: transparent;
+        border : 0px;
+        border-bottom: 2px solid gray;
+        &:focus{
+            border : 0px;
+            border-bottom: 2px solid black;
+        }
+    }
+
+    button {
+        @extend %greenButton;
+        margin-bottom: 10px;
+    }
+}

@@ -1,0 +1,46 @@
+@use 'vars';
+@use 'common';
+@use 'center';
+
+#waiting-component{
+    @include center.centerIt($flexDirection : column);  
+    height: 100vh;
+}
+
+#waiting {
+    background-color: vars.$secondaryColor;
+    width : min(45vw,500px);
+    color : vars.$fontColor;
+    border-radius: 3%;
+
+    @include center.centerIt($flexDirection : column); 
+
+    h2 {
+        margin: 0;
+        padding: 5px 0px;
+        width: 100%;
+        text-align: center;
+        border-bottom: 2px grey solid;
+    }
+
+    #players{
+        width: 100%;
+        border-bottom: 2px solid grey;
+    }
+
+    .player {
+        font-size: 25px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .odd {
+        background-color: vars.$fourthColor;
+    }
+
+    button {
+        @extend %greenButton;
+        padding: 2%;
+        margin: 10px 0px;
+    }
+}

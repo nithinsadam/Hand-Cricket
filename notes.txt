@@ -1,0 +1,17 @@
+-- Front End ---
+Components : 
+Form : just input for room code for now
+Game : Main component for the actual game 
+    Creates a socket
+    Then sends the room code by emitting an init event
+
+-- BackEnd --
+For now, A game is created when the form is submitted
+Then redirects to game/:roomCode
+For now there is no authorization for roomCode 
+Will implement log in system and authorization very soon
+
+
+--Future Refs--
+PassportJS for authentication and sessions
+set WithCredentials true for axios on client side 
